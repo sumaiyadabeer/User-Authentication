@@ -1,0 +1,34 @@
+
+
+{% if option == "pass_img" %}
+	<img src = /media/{{image.pass_img}} height="400">
+{% elif option == "other_img1"%}
+	<img src = /media/{{image.other_img1}} height="400">
+{% elif option == "other_img2"%}
+	<img src = /media/{{image.other_img2}} height="400">
+{% elif option == "other_img3"%}
+	<img src = /media/{{image.other_img3}} height="400">
+{% elif option == "other_img4"%}
+	<img src = /media/{{image.other_img4}} height="400">
+{% elif option == "other_img5"%}
+	<img src = /media/{{image.other_img5}} height="400">
+{% elif option == "other_img6"%}
+	<img src = /media/{{image.other_img6}} height="400">
+{% elif option == "other_img7"%}
+	<img src = /media/{{image.other_img7}} height="400">
+{% else%}
+	<img src = /media/{{image.other_img8}} height="400">
+{% endif %}
+
+
+<form action="{% url 'music:enter_tag'%}" method="post" enctype="multipart/form-data" id="form1">
+	{% csrf_token %}
+	enter tag of this image:
+  <input id="tagg" maxlength="30" name="tagg" type="password">
+  <input id="id_username" maxlength="30" name="username" type="password" value="{{image.username}}">
+  <input id="id_selected_image" maxlength="30" name="selected_image" type="password" value="{{option}}">
+    <button type="submit" form="form1" value="Submit">Submit</button>
+
+</form>
+
+

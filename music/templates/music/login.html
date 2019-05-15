@@ -1,0 +1,27 @@
+
+
+{% block body %}
+
+                    <h3>Log In</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form  role="form" action="{% url 'music:login_user'%}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                       
+                            
+                                Username:
+                            
+                           
+                                <input id="id_username" maxlength="30" name="username" type="text">
+                        
+                      <br>
+                         
+                           <button type="submit" class="btn btn-success">Submit</button>
+                            
+                    </form>
+               
+                    Don't have an account? <a href="{% url 'music:register' %}">Click here</a> to register.
+                
+{% endblock %}
+

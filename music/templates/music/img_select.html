@@ -1,0 +1,70 @@
+<html>
+<head>
+	<style type="text/css">
+	img {
+    -webkit-filter: blur(16px); /* Safari 6.0 - 9.0 */
+    filter: blur(16px);
+}
+table, th, td {
+    border: 1px solid black;
+
+}
+
+</style>
+
+
+</head>
+
+<img style="-webkit-filter: blur(1px);filter: blur(1px);" src = /media/{{image.optical_img}} height="400">
+
+<form action="{% url 'music:img_select'%}" method="post" enctype="multipart/form-data" id="form1">
+	 {% csrf_token %}
+   <input id="id_username" maxlength="30" name="username" type="text" value="{{image.username}}">
+<br>
+tick on your image
+<br>
+<table >
+  <tr>
+    <th><img src = /media/{{image.pass_img}} height="200" width="200">
+    	<input type="radio" name="img1" value="pass_img" <br></th>
+    <th><img src = /media/{{image.other_img1}} height="200" width="200">
+    <input type="radio" name="img1" value="other_img1" <br></th> 
+    <th><img src = /media/{{image.other_img2}} height="200" width="200">
+    <input type="radio" name="img1" value="other_img2" <br></th>
+  </tr>
+  <tr>
+    <td><img src = /media/{{image.other_img3}} height="200" width="200">
+    <input type="radio" name="img1" value="other_img3" <br></td>
+    <td><img src = /media/{{image.other_img4}} height="200" width="200">
+    <input type="radio" name="img1" value="other_img4" <br></td>
+    <td><img src = /media/{{image.other_img5}} height="200" width="200">
+    <input type="radio" name="img1" value="other_img5" <br></td>
+  </tr>
+  <tr>
+    <td><img src = /media/{{image.other_img6}} height="200" width="200">
+    <input type="radio" name="img1" value="other_img6" <br></td>
+    <td><img src = /media/{{image.other_img7}} height="200" width="200">
+    <input type="radio" name="img1" value="other_img7" <br></td>
+    <td><img src = /media/{{image.other_img8}} height="200" width="200">
+    <input type="radio" name="img1" value="other_img8" <br></td>
+  </tr>
+ 
+</table>
+<button type="submit" form="form1" value="Submit">Submit</button>
+</form>
+
+
+
+
+
+
+
+<!--<img src = {{ apni_img1}} height="200" width="200">-->
+<h1>hi
+</h1>
+
+{% if image %}
+<p> <strong>passed variable is in if {{image.username}}</strong></p>
+{% else %}
+<p> <strong> passed variable is in else {{apni_img1}} </strong></p>
+{% endif %}
